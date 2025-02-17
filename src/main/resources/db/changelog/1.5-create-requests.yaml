@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.5-create-requests
+      author: danil
+      changes:
+        - createTable:
+            tableName: requests
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: item_id
+                  type: uuid
+                  constraints:
+                    foreignKeyName: fk_request_item
+                    references: items(id)
+                    nullable: false
+              - column:
+                  name: user_id
+                  type: uuid
+                  constraints:
+                    foreignKeyName: fk_request_user
+                    references: users(id)
+              - column:
+                  name: warehouse_id
+                  type: uuid
+                  constraints:
+                    foreignKeyName: fk_request_warehouse
+                    references: warehouses(id)
+              - column:
+                  name: status
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+

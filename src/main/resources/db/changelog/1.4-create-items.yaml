@@ -1,0 +1,32 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.4-create-items
+      author: danil
+      changes:
+        - createTable:
+            tableName: items
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: template_id
+                  type: uuid
+                  constraints:
+                    foreignKeyName: fk_item_template
+                    references: templates(id)
+                    nullable: false
+              - column:
+                  name: warehouse_id
+                  type: uuid
+                  constraints:
+                    foreignKeyName: fk_item_warehouse
+                    references: warehouses(id)

@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1.3-create-attributes
+      author: danil
+      changes:
+        - createTable:
+            tableName: attributes
+            columns:
+              - column:
+                  name: id
+                  type: uuid
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar(50)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: required
+                  type: boolean
+                  constraints:
+                    nullable: false
