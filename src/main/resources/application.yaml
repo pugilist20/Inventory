@@ -1,6 +1,6 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/Inventory
+    url: jdbc:postgresql://postgres:5432/Inventory
     username: postgres
     password: 1234
     driver-class-name: org.postgresql.Driver
@@ -32,6 +32,13 @@ spring:
             enable: true
           ssl:
             enable: true
+  jwt:
+    secret-key: "7f8G&9hK@3jL#2mN$1pQ^5zR*8tW!0xV"
+    char-lower: "abcdefghijklmnopqrstuvwxyz"
+    number: "0123456789"
+    other-char: "!@#$%&*()_+-=[]?"
+    password-length: 12
+
 server:
   error:
     include-message: never

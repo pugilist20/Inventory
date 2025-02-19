@@ -1,0 +1,13 @@
+error:
+  email:
+    taken: "Email is already in use"
+  login:
+    taken: "Login is already in use"
+  invalid:
+    role: "Invalid role: {0}"
+    credentials: "Invalid login or password"
+
+email:
+  registration:
+    subject: "Registration in the inventory system"
+    body: "Your account has been created.\nLogin: {0}\nPassword: {1}"
